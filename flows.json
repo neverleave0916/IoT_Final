@@ -1,0 +1,1568 @@
+[
+    {
+        "id": "8112416c121b79de",
+        "type": "tab",
+        "label": "流程1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0d5e9c13ee56b8c2",
+        "type": "subflow",
+        "name": "parse mode",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 200,
+                "wires": [
+                    {
+                        "id": "2a6277a56d3b7ddb"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 720,
+                "y": 200,
+                "wires": [
+                    {
+                        "id": "85dcf428d596440b",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "49277953e81146ee",
+        "type": "subflow",
+        "name": "parse status",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 120,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "29088decbfc71d2b"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 520,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "81d82c6e729f1a4b",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "8dcbf9111fdecc73",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "140.117.68.33",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "541b57cd80b15286",
+        "type": "ui_group",
+        "name": "監控資訊",
+        "tab": "a26b928af6a01cfd",
+        "order": 2,
+        "disp": true,
+        "width": "18",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a26b928af6a01cfd",
+        "type": "ui_tab",
+        "name": "農業監控平台",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "9b724397abe86a52",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#66938e",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#66938e",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#66938e",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#92b3b0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#66938e",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "農業監控平台",
+            "hideToolbar": "false",
+            "allowSwipe": "true",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "cdb1e19e858f4a8d",
+        "type": "ui_group",
+        "name": "歷史記錄",
+        "tab": "a26b928af6a01cfd",
+        "order": 4,
+        "disp": true,
+        "width": "18",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "84c1b00b1b55c297",
+        "type": "ui_group",
+        "name": "水泵",
+        "tab": "a26b928af6a01cfd",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "734d1653dd7af3dc",
+        "type": "ui_group",
+        "name": "風扇",
+        "tab": "a26b928af6a01cfd",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c567b47bd72969f8",
+        "type": "ui_group",
+        "name": "照明",
+        "tab": "a26b928af6a01cfd",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b423aca792682c63",
+        "type": "ui_group",
+        "name": "移除",
+        "tab": "a26b928af6a01cfd",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2a6277a56d3b7ddb",
+        "type": "json",
+        "z": "0d5e9c13ee56b8c2",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 230,
+        "y": 200,
+        "wires": [
+            [
+                "85dcf428d596440b"
+            ]
+        ]
+    },
+    {
+        "id": "85dcf428d596440b",
+        "type": "function",
+        "z": "0d5e9c13ee56b8c2",
+        "name": "",
+        "func": "if (msg.payload.current_mode == \"auto\"){\n    msg.payload =\"\\\"auto\\\"\"\n}else if (msg.payload.current_mode == \"manual\"){\n     msg.payload =\"\\\"manual\\\"\"\n}\nmsg.topic = \"input\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29088decbfc71d2b",
+        "type": "json",
+        "z": "49277953e81146ee",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 230,
+        "y": 140,
+        "wires": [
+            [
+                "81d82c6e729f1a4b"
+            ]
+        ]
+    },
+    {
+        "id": "81d82c6e729f1a4b",
+        "type": "function",
+        "z": "49277953e81146ee",
+        "name": "",
+        "func": "if (msg.payload.current_status == 0){\n    msg.payload =0\n}else if (msg.payload.current_status == 1){\n     msg.payload =1\n}\nmsg.topic = \"input\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2a1ddb4cf6587ca",
+        "type": "mqtt in",
+        "z": "8112416c121b79de",
+        "name": "",
+        "topic": "#",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "8dcbf9111fdecc73",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4e9555fb4988509e",
+        "type": "ui_switch",
+        "z": "8112416c121b79de",
+        "name": "",
+        "label": "照明開關",
+        "tooltip": "",
+        "group": "c567b47bd72969f8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 540,
+        "y": 380,
+        "wires": [
+            [
+                "7bf3d79228687b20",
+                "843f0623b0605866"
+            ]
+        ]
+    },
+    {
+        "id": "69b74adf05ed76c5",
+        "type": "mqtt in",
+        "z": "8112416c121b79de",
+        "name": "",
+        "topic": "/Farm/Sensor/WaterLevel",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "8dcbf9111fdecc73",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 1720,
+        "wires": [
+            [
+                "df47cb6f0fb6ba2a"
+            ]
+        ]
+    },
+    {
+        "id": "df47cb6f0fb6ba2a",
+        "type": "ui_gauge",
+        "z": "8112416c121b79de",
+        "name": "",
+        "group": "541b57cd80b15286",
+        "order": 5,
+        "width": "3",
+        "height": "3",
+        "gtype": "wave",
+        "title": "水位",
+        "label": "公分",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "500",
+        "seg2": "700",
+        "className": "",
+        "x": 630,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "2d833b8660c8cb77",
+        "type": "mqtt in",
+        "z": "8112416c121b79de",
+        "name": "",
+        "topic": "/Farm/Sensor/Temperature",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "8dcbf9111fdecc73",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 1480,
+        "wires": [
+            [
+                "7254e26c5f9545ea",
+                "6dfb8cd69c1d8826"
+            ]
+        ]
+    },
+    {
+        "id": "7254e26c5f9545ea",
+        "type": "ui_gauge",
+        "z": "8112416c121b79de",
+        "name": "",
+        "group": "541b57cd80b15286",
+        "order": 1,
+        "width": "4",
+        "height": "4",
+        "gtype": "gage",
+        "title": "溫度",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "25",
+        "seg2": "35",
+        "className": "",
+        "x": 630,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "60ab68ec05fa9806",
+        "type": "mqtt in",
+        "z": "8112416c121b79de",
+        "name": "",
+        "topic": "/Farm/Sensor/Humidity",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "8dcbf9111fdecc73",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 400,
+        "y": 1600,
+        "wires": [
+            [
+                "9dcd312d510af488",
+                "93f750dfd2e6eb1c"
+            ]
+        ]
+    },
+    {
+        "id": "9dcd312d510af488",
+        "type": "ui_gauge",
+        "z": "8112416c121b79de",
+        "name": "",
+        "group": "541b57cd80b15286",
+        "order": 2,
+        "width": 4,
+        "height": "3",
+        "gtype": "donut",
+        "title": "濕度",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "70",
+        "seg2": "80",
+        "className": "",
+        "x": 630,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "f819f10bf04d0e46",
+        "type": "mqtt in",
+        "z": "8112416c121b79de",
+        "name": "",
+        "topic": "/Farm/Sensor/Light",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "8dcbf9111fdecc73",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 390,
+        "y": 1800,
+        "wires": [
+            [
+                "cab9af7df8ca370f"
+            ]
+        ]
+    },
+    {
+        "id": "cab9af7df8ca370f",
+        "type": "ui_gauge",
+        "z": "8112416c121b79de",
+        "name": "",
+        "group": "541b57cd80b15286",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "gtype": "wave",
+        "title": "照度",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1023",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "70",
+        "seg2": "80",
+        "className": "light_fill_color",
+        "x": 630,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "6dfb8cd69c1d8826",
+        "type": "ui_chart",
+        "z": "8112416c121b79de",
+        "name": "",
+        "group": "cdb1e19e858f4a8d",
+        "order": 6,
+        "width": "18",
+        "height": "3",
+        "label": "溫度曲線",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#fe7d25",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 640,
+        "y": 1420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7bf3d79228687b20",
+        "type": "mqtt out",
+        "z": "8112416c121b79de",
+        "name": "Light",
+        "topic": "/Farm/Device/Light",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8dcbf9111fdecc73",
+        "x": 770,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "9c6d8046e30fc119",
+        "type": "ui_switch",
+        "z": "8112416c121b79de",
+        "name": "",
+        "label": "自動模式",
+        "tooltip": "",
+        "group": "c567b47bd72969f8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "\"auto\"",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "\"manual\"",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 540,
+        "y": 260,
+        "wires": [
+            [
+                "66a7594b5db5a8a1",
+                "bfe78bdf147758c3"
+            ]
+        ]
+    },
+    {
+        "id": "66a7594b5db5a8a1",
+        "type": "mqtt out",
+        "z": "8112416c121b79de",
+        "name": "Light",
+        "topic": "/Farm/Device/Light",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8dcbf9111fdecc73",
+        "x": 770,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "b010f488ec282f29",
+        "type": "ui_slider",
+        "z": "8112416c121b79de",
+        "name": "",
+        "label": "靈敏度",
+        "tooltip": "",
+        "group": "84c1b00b1b55c297",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "payload",
+        "topicType": "msg",
+        "min": 0,
+        "max": "5",
+        "step": "0.1",
+        "className": "",
+        "x": 530,
+        "y": 860,
+        "wires": [
+            [
+                "b916c4f160f4b89a"
+            ]
+        ]
+    },
+    {
+        "id": "c3448b1cdaf2c549",
+        "type": "mqtt out",
+        "z": "8112416c121b79de",
+        "name": "Pump",
+        "topic": "/Farm/Device/Pump",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8dcbf9111fdecc73",
+        "x": 970,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "ab693d8d5fe2c8df",
+        "type": "template",
+        "z": "8112416c121b79de",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\"threshold\":{{topic}}}",
+        "output": "json",
+        "x": 830,
+        "y": 860,
+        "wires": [
+            [
+                "c3448b1cdaf2c549"
+            ]
+        ]
+    },
+    {
+        "id": "cd2c80252d4de7cb",
+        "type": "ui_slider",
+        "z": "8112416c121b79de",
+        "name": "",
+        "label": "靈敏度",
+        "tooltip": "",
+        "group": "734d1653dd7af3dc",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "payload",
+        "topicType": "msg",
+        "min": 0,
+        "max": "1023",
+        "step": 1,
+        "className": "",
+        "x": 510,
+        "y": 1240,
+        "wires": [
+            [
+                "db41419ae1dc34b9"
+            ]
+        ]
+    },
+    {
+        "id": "d22b5bd1b55b57a2",
+        "type": "mqtt out",
+        "z": "8112416c121b79de",
+        "name": "Fan",
+        "topic": "/Farm/Device/Fan",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8dcbf9111fdecc73",
+        "x": 810,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "db41419ae1dc34b9",
+        "type": "template",
+        "z": "8112416c121b79de",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\"threshold\":{{topic}}}",
+        "output": "json",
+        "x": 670,
+        "y": 1240,
+        "wires": [
+            [
+                "d22b5bd1b55b57a2"
+            ]
+        ]
+    },
+    {
+        "id": "32fe0ae04b1378c7",
+        "type": "ui_slider",
+        "z": "8112416c121b79de",
+        "name": "",
+        "label": "靈敏度",
+        "tooltip": "",
+        "group": "c567b47bd72969f8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "payload",
+        "topicType": "msg",
+        "min": 0,
+        "max": "1023",
+        "step": 1,
+        "className": "",
+        "x": 530,
+        "y": 440,
+        "wires": [
+            [
+                "6d21626e08a192ac"
+            ]
+        ]
+    },
+    {
+        "id": "0bb632a7dfd4a99b",
+        "type": "mqtt out",
+        "z": "8112416c121b79de",
+        "name": "Light",
+        "topic": "/Farm/Device/Light",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8dcbf9111fdecc73",
+        "x": 830,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "6d21626e08a192ac",
+        "type": "template",
+        "z": "8112416c121b79de",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\"threshold\":{{topic}}}",
+        "output": "json",
+        "x": 690,
+        "y": 440,
+        "wires": [
+            [
+                "0bb632a7dfd4a99b"
+            ]
+        ]
+    },
+    {
+        "id": "26cf0f2f580b032e",
+        "type": "mqtt in",
+        "z": "8112416c121b79de",
+        "name": "",
+        "topic": "/Farm/Sensor/SoilHumidity",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "8dcbf9111fdecc73",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 1660,
+        "wires": [
+            [
+                "74881b1d74fa23e3"
+            ]
+        ]
+    },
+    {
+        "id": "74881b1d74fa23e3",
+        "type": "ui_gauge",
+        "z": "8112416c121b79de",
+        "name": "",
+        "group": "541b57cd80b15286",
+        "order": 3,
+        "width": "3",
+        "height": "3",
+        "gtype": "donut",
+        "title": "土壤濕度",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "70",
+        "seg2": "80",
+        "className": "",
+        "x": 640,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "b916c4f160f4b89a",
+        "type": "range",
+        "z": "8112416c121b79de",
+        "minin": "0",
+        "maxin": "5",
+        "minout": "0",
+        "maxout": "1023",
+        "action": "clamp",
+        "round": true,
+        "property": "topic",
+        "name": "",
+        "x": 680,
+        "y": 860,
+        "wires": [
+            [
+                "ab693d8d5fe2c8df"
+            ]
+        ]
+    },
+    {
+        "id": "93f750dfd2e6eb1c",
+        "type": "ui_chart",
+        "z": "8112416c121b79de",
+        "name": "",
+        "group": "cdb1e19e858f4a8d",
+        "order": 7,
+        "width": "18",
+        "height": "3",
+        "label": "濕度曲線",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#97b2ce",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 640,
+        "y": 1540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d137eba672445093",
+        "type": "inject",
+        "z": "8112416c121b79de",
+        "name": "清除圖表",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 440,
+        "y": 1540,
+        "wires": [
+            [
+                "6dfb8cd69c1d8826",
+                "93f750dfd2e6eb1c"
+            ]
+        ]
+    },
+    {
+        "id": "bfe78bdf147758c3",
+        "type": "function",
+        "z": "8112416c121b79de",
+        "name": "output to input",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 200,
+        "wires": [
+            [
+                "9c6d8046e30fc119"
+            ]
+        ]
+    },
+    {
+        "id": "ec0104a41e8c2740",
+        "type": "mqtt in",
+        "z": "8112416c121b79de",
+        "name": "",
+        "topic": "/Farm/Device/Light",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "8dcbf9111fdecc73",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 260,
+        "wires": [
+            [
+                "74f1ab740220ebe8"
+            ]
+        ]
+    },
+    {
+        "id": "74f1ab740220ebe8",
+        "type": "subflow:0d5e9c13ee56b8c2",
+        "z": "8112416c121b79de",
+        "name": "",
+        "x": 370,
+        "y": 260,
+        "wires": [
+            [
+                "9c6d8046e30fc119"
+            ]
+        ]
+    },
+    {
+        "id": "843f0623b0605866",
+        "type": "function",
+        "z": "8112416c121b79de",
+        "name": "output to input",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 320,
+        "wires": [
+            [
+                "4e9555fb4988509e"
+            ]
+        ]
+    },
+    {
+        "id": "35511b91093a1b93",
+        "type": "mqtt in",
+        "z": "8112416c121b79de",
+        "name": "",
+        "topic": "/Farm/Device/Light",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "8dcbf9111fdecc73",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [
+                "1cb6f05d0ce2186d"
+            ]
+        ]
+    },
+    {
+        "id": "1cb6f05d0ce2186d",
+        "type": "subflow:49277953e81146ee",
+        "z": "8112416c121b79de",
+        "name": "",
+        "x": 370,
+        "y": 380,
+        "wires": [
+            [
+                "4e9555fb4988509e"
+            ]
+        ]
+    },
+    {
+        "id": "355c91c477a8cd99",
+        "type": "ui_switch",
+        "z": "8112416c121b79de",
+        "name": "",
+        "label": "水泵開關",
+        "tooltip": "",
+        "group": "84c1b00b1b55c297",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 540,
+        "y": 780,
+        "wires": [
+            [
+                "91e5a488da49c21c",
+                "f51dd98df9b93fe6"
+            ]
+        ]
+    },
+    {
+        "id": "91e5a488da49c21c",
+        "type": "mqtt out",
+        "z": "8112416c121b79de",
+        "name": "Pump",
+        "topic": "/Farm/Device/Pump",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8dcbf9111fdecc73",
+        "x": 770,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "d7f1064a78d1ef44",
+        "type": "ui_switch",
+        "z": "8112416c121b79de",
+        "name": "",
+        "label": "自動模式",
+        "tooltip": "",
+        "group": "84c1b00b1b55c297",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "\"auto\"",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "\"manual\"",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 540,
+        "y": 660,
+        "wires": [
+            [
+                "607a994df7769d76",
+                "65f6fcf0f4bec498"
+            ]
+        ]
+    },
+    {
+        "id": "607a994df7769d76",
+        "type": "mqtt out",
+        "z": "8112416c121b79de",
+        "name": "Pump",
+        "topic": "/Farm/Device/Pump",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8dcbf9111fdecc73",
+        "x": 770,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "65f6fcf0f4bec498",
+        "type": "function",
+        "z": "8112416c121b79de",
+        "name": "output to input",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 600,
+        "wires": [
+            [
+                "d7f1064a78d1ef44"
+            ]
+        ]
+    },
+    {
+        "id": "efd462dda9422ac5",
+        "type": "mqtt in",
+        "z": "8112416c121b79de",
+        "name": "",
+        "topic": "/Farm/Device/Pump",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "8dcbf9111fdecc73",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 660,
+        "wires": [
+            [
+                "abcaded1e50d2de4"
+            ]
+        ]
+    },
+    {
+        "id": "abcaded1e50d2de4",
+        "type": "subflow:0d5e9c13ee56b8c2",
+        "z": "8112416c121b79de",
+        "name": "",
+        "x": 370,
+        "y": 660,
+        "wires": [
+            [
+                "d7f1064a78d1ef44"
+            ]
+        ]
+    },
+    {
+        "id": "f51dd98df9b93fe6",
+        "type": "function",
+        "z": "8112416c121b79de",
+        "name": "output to input",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 720,
+        "wires": [
+            [
+                "355c91c477a8cd99"
+            ]
+        ]
+    },
+    {
+        "id": "42af68c11ed0fa4c",
+        "type": "mqtt in",
+        "z": "8112416c121b79de",
+        "name": "",
+        "topic": "/Farm/Device/Pump",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "8dcbf9111fdecc73",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 780,
+        "wires": [
+            [
+                "46de778569996691"
+            ]
+        ]
+    },
+    {
+        "id": "46de778569996691",
+        "type": "subflow:49277953e81146ee",
+        "z": "8112416c121b79de",
+        "name": "",
+        "x": 370,
+        "y": 780,
+        "wires": [
+            [
+                "355c91c477a8cd99"
+            ]
+        ]
+    },
+    {
+        "id": "ee992d283325d58d",
+        "type": "ui_switch",
+        "z": "8112416c121b79de",
+        "name": "",
+        "label": "風扇開關",
+        "tooltip": "",
+        "group": "734d1653dd7af3dc",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 520,
+        "y": 1160,
+        "wires": [
+            [
+                "d33e17f00d9e959d",
+                "9ce205be1e677bfa"
+            ]
+        ]
+    },
+    {
+        "id": "d33e17f00d9e959d",
+        "type": "mqtt out",
+        "z": "8112416c121b79de",
+        "name": "Fan",
+        "topic": "/Farm/Device/Fan",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8dcbf9111fdecc73",
+        "x": 750,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "36ea683cd6f5f53d",
+        "type": "ui_switch",
+        "z": "8112416c121b79de",
+        "name": "",
+        "label": "自動模式",
+        "tooltip": "",
+        "group": "734d1653dd7af3dc",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "\"auto\"",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "\"manual\"",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 520,
+        "y": 1040,
+        "wires": [
+            [
+                "c707d39d314bacc8",
+                "2a05bd3f4d1ced29"
+            ]
+        ]
+    },
+    {
+        "id": "c707d39d314bacc8",
+        "type": "mqtt out",
+        "z": "8112416c121b79de",
+        "name": "Fan",
+        "topic": "/Farm/Device/Fan",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8dcbf9111fdecc73",
+        "x": 750,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "2a05bd3f4d1ced29",
+        "type": "function",
+        "z": "8112416c121b79de",
+        "name": "output to input",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 980,
+        "wires": [
+            [
+                "36ea683cd6f5f53d"
+            ]
+        ]
+    },
+    {
+        "id": "c3f7186cd331ab2e",
+        "type": "mqtt in",
+        "z": "8112416c121b79de",
+        "name": "",
+        "topic": "/Farm/Device/Fan",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "8dcbf9111fdecc73",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 1040,
+        "wires": [
+            [
+                "54e946f96322f9c1"
+            ]
+        ]
+    },
+    {
+        "id": "54e946f96322f9c1",
+        "type": "subflow:0d5e9c13ee56b8c2",
+        "z": "8112416c121b79de",
+        "name": "",
+        "x": 350,
+        "y": 1040,
+        "wires": [
+            [
+                "36ea683cd6f5f53d"
+            ]
+        ]
+    },
+    {
+        "id": "9ce205be1e677bfa",
+        "type": "function",
+        "z": "8112416c121b79de",
+        "name": "output to input",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 1100,
+        "wires": [
+            [
+                "ee992d283325d58d"
+            ]
+        ]
+    },
+    {
+        "id": "b0d2d043f3836a3a",
+        "type": "mqtt in",
+        "z": "8112416c121b79de",
+        "name": "",
+        "topic": "/Farm/Device/Fan",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "8dcbf9111fdecc73",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 1160,
+        "wires": [
+            [
+                "aae5df1185a9449e"
+            ]
+        ]
+    },
+    {
+        "id": "aae5df1185a9449e",
+        "type": "subflow:49277953e81146ee",
+        "z": "8112416c121b79de",
+        "name": "parse status",
+        "x": 350,
+        "y": 1160,
+        "wires": [
+            [
+                "ee992d283325d58d"
+            ]
+        ]
+    }
+]
