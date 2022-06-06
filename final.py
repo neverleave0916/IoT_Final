@@ -17,7 +17,6 @@ def reScale(OldValue, new_max=100):
     OldRange = 1023
     if OldRange == 0:
         pass
-        ENewValue = NewMin
     else:
         #NewRange = (NewMax - NewMin)
         NewRange = new_max
