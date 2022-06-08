@@ -146,7 +146,7 @@ class Relay(GPIOdevie):
 # 17 27 22
 light = Relay(4, name = "light", mode="auto", threshold=500, status="off", trigger_mode = "lesser", current_value = 0, High_trigger=True)
 fan = Relay(3, name = "fan", mode="auto", threshold=500, status="off", trigger_mode = "greater", current_value = 0, High_trigger=True)
-pump = Relay(2, name = "pump", mode="auto", threshold=500, status="off", trigger_mode = "lesser", current_value = 0, High_trigger=True)
+pump = Relay(2, name = "pump", mode="auto", threshold=500, status="off", trigger_mode = "greater", current_value = 0, High_trigger=True)
 
 devices = [{
                 "topic" : "/Farm/Device/Light",
@@ -259,7 +259,7 @@ mqttc_public.publish("/Farm/Device/Light", json.dumps(payload), qos=1)
 payload = {"mode":"auto", "threshold":33, "status": "on", "trigger_mode": "greater"}
 mqttc_public.publish("/Farm/Device/Fan", json.dumps(payload), qos=1)
 
-payload = {"mode":"auto", "threshold":100, "status": "on", "trigger_mode": "lesser"}
+payload = {"mode":"auto", "threshold":100, "status": "on", "trigger_mode": "greater"}
 mqttc_public.publish("/Farm/Device/Pump", json.dumps(payload), qos=1)
 
 while True:
