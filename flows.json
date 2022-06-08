@@ -262,17 +262,6 @@
         "className": ""
     },
     {
-        "id": "b423aca792682c63",
-        "type": "ui_group",
-        "name": "移除",
-        "tab": "a26b928af6a01cfd",
-        "order": 6,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "2a6277a56d3b7ddb",
         "type": "json",
         "z": "0d5e9c13ee56b8c2",
@@ -476,7 +465,7 @@
         "label": "units",
         "format": "{{value}}",
         "min": 0,
-        "max": "50",
+        "max": "45",
         "colors": [
             "#00b500",
             "#e6e600",
@@ -518,7 +507,7 @@
         "name": "",
         "group": "541b57cd80b15286",
         "order": 2,
-        "width": 4,
+        "width": "3",
         "height": "3",
         "gtype": "donut",
         "title": "濕度",
@@ -599,14 +588,14 @@
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
-        "interpolate": "linear",
+        "interpolate": "bezier",
         "nodata": "",
         "dot": false,
         "ymin": "",
         "ymax": "",
         "removeOlder": 1,
         "removeOlderPoints": "",
-        "removeOlderUnit": "86400",
+        "removeOlderUnit": "3600",
         "cutout": 0,
         "useOneColor": false,
         "useUTC": false,
@@ -717,14 +706,14 @@
         "topic": "payload",
         "topicType": "msg",
         "min": 0,
-        "max": "5",
-        "step": "0.1",
+        "max": "100",
+        "step": "1",
         "className": "",
         "x": 530,
         "y": 860,
         "wires": [
             [
-                "b916c4f160f4b89a"
+                "ab693d8d5fe2c8df"
             ]
         ]
     },
@@ -781,7 +770,7 @@
         "topic": "payload",
         "topicType": "msg",
         "min": 0,
-        "max": "1023",
+        "max": "45",
         "step": 1,
         "className": "",
         "x": 510,
@@ -946,7 +935,7 @@
         "type": "range",
         "z": "8112416c121b79de",
         "minin": "0",
-        "maxin": "5",
+        "maxin": "100",
         "minout": "0",
         "maxout": "1023",
         "action": "clamp",
@@ -956,9 +945,7 @@
         "x": 680,
         "y": 860,
         "wires": [
-            [
-                "ab693d8d5fe2c8df"
-            ]
+            []
         ]
     },
     {
@@ -974,14 +961,14 @@
         "chartType": "line",
         "legend": "false",
         "xformat": "HH:mm:ss",
-        "interpolate": "linear",
+        "interpolate": "bezier",
         "nodata": "",
         "dot": false,
         "ymin": "",
         "ymax": "",
         "removeOlder": 1,
         "removeOlderPoints": "",
-        "removeOlderUnit": "86400",
+        "removeOlderUnit": "3600",
         "cutout": 0,
         "useOneColor": false,
         "useUTC": false,
