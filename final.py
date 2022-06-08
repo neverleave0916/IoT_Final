@@ -8,10 +8,29 @@ import json
 tw = pytz.timezone('Asia/Taipei')
 import random
 
-
+# ==============================================================
+# 設定值
+# ==============================================================
 MQTT_SERVER = "IP"  
 MQTT_PORT = 1883 
+MQTT_ALIVE = 0  
 
+DB_IP = "IP"
+DB_USER = "robot"
+DB_PASSWORD = "pwd"
+DB_PORT = 3306
+
+LIGHT_IO = 4
+FAN_IO = 3
+PUMP_IO = 2
+
+DHT_IO = 14
+
+IF_DHT_RAMDOM = True
+
+# ==============================================================
+# 函數
+# ==============================================================
 def reScale(OldValue, new_max=100):
     #OldRange = (OldMax - OldMin)
     OldRange = 1023
@@ -24,15 +43,20 @@ def reScale(OldValue, new_max=100):
         NewValue = OldValue * (NewRange / OldRange)
     return round(NewValue,2)
 
+# ==============================================================
+# 資料庫
+# ==============================================================
 def connectToDB(forum):
-    db = pymysql.connect(host="IP", user="robot", password="pwd", port=3306, charset='utf8mb4')
+    db = pymysql.connect(host=DB_IP, user=DB_USER, password=DB_PASSWORD, port=DB_PORT, charset='utf8mb4')
     cursor = db.cursor()
     cursor.execute("use " + forum)  # 設定database
     return (cursor,db) 
 
 cursor,db = connectToDB("IoT")
 
-
+# ==============================================================
+# 定義classes
+# ==============================================================
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 class GPIOdevie:
@@ -133,7 +157,9 @@ class Relay(GPIOdevie):
         self.updateStatus()
         
     
-
+# ==============================================================
+# 宣告感測器與設備
+# ==============================================================
 #rLED = GPIOdevie(4,"OUT")
 #yLED = GPIOdevie(3,"OUT")
 #gLED = GPIOdevie(2,"OUT")
@@ -144,9 +170,9 @@ class Relay(GPIOdevie):
 
 # init device
 # 17 27 22
-light = Relay(4, name = "light", mode="auto", threshold=500, status="off", trigger_mode = "lesser", current_value = 0, High_trigger=True)
-fan = Relay(3, name = "fan", mode="auto", threshold=500, status="off", trigger_mode = "greater", current_value = 0, High_trigger=True)
-pump = Relay(2, name = "pump", mode="auto", threshold=500, status="off", trigger_mode = "lesser", current_value = 0, High_trigger=True)
+light = Relay(LIGHT_IO, name = "light", mode="auto", threshold=500, status="off", trigger_mode = "lesser", current_value = 0, High_trigger=True)
+fan = Relay(FAN_IO, name = "fan", mode="auto", threshold=500, status="off", trigger_mode = "greater", current_value = 0, High_trigger=True)
+pump = Relay(PUMP_IO, name = "pump", mode="auto", threshold=500, status="off", trigger_mode = "lesser", current_value = 0, High_trigger=True)
 
 devices = [{
                 "topic" : "/Farm/Device/Light",
@@ -167,6 +193,10 @@ sensor_topics = {
     "topic_soil" : "/Farm/Sensor/SoilHumidity",
     "topic_water" : "/Farm/Sensor/WaterLevel"
 }
+
+# ==============================================================
+# subscript端程式
+# ==============================================================
 
 # 當地端程式連線伺服器得到回應時，要做的動作
 def on_connect(client, userdata, flags, rc):
@@ -222,10 +252,9 @@ client.on_message = on_message
 
 # 設定登入帳號密碼
 #client.username_pw_set("try","xxxx")
-#MQTT_SERVER = "mqttgo.io"
-MQTT_SERVER = "140.117.68.33"
+
 # 設定連線資訊(IP, Port, 連線時間)
-client.connect(MQTT_SERVER, MQTT_PORT, 60)
+client.connect(MQTT_SERVER, MQTT_PORT, MQTT_ALIVE)
 
 # 開始連線，執行設定的動作和處理重新連線問題
 # 也可以手動使用其他loop函式來進行連接
@@ -233,10 +262,9 @@ client.connect(MQTT_SERVER, MQTT_PORT, 60)
 client.loop_start()
 
 
-
-# *********************************************************************
-# Start publish
-# *********************************************************************
+# ==============================================================
+# publish端程式
+# ==============================================================
 import Adafruit_DHT
 from gpiozero import MCP3008
 
@@ -245,7 +273,7 @@ soil_sensor = MCP3008(1)
 water_sensor = MCP3008(2)
 
 mqttc_public = mqtt.Client("M104020019_public")
-MQTT_ALIVE = 0  
+
 mqttc_public.connect(MQTT_SERVER, MQTT_PORT, MQTT_ALIVE) 
 
 
@@ -267,11 +295,14 @@ while True:
         # *********************************************************************
         # Get sensor data
         # *********************************************************************
-        #humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.DHT11, 14)
-        #temperature_value = temperature
-        #humidity_value = humidity
-        temperature_value = random.randint(25,40)
-        humidity_value = random.randint(0,100)
+        if IF_DHT_RAMDOM:
+            humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.DHT11, DHT_IO)
+            temperature_value = temperature
+            humidity_value = humidity
+        else:
+            temperature_value = random.randint(25,40)
+            humidity_value = random.randint(0,100)
+        
         light_value = 1023 - light_sensor.raw_value
         soil_value = reScale(1023 - soil_sensor.raw_value)
         water_value = reScale(water_sensor.raw_value,5)
